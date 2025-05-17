@@ -8,7 +8,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 
 admin_bp = Blueprint('admin', __name__)
 
-# 🔍 View all flagged transactions
+# View all flagged transactions
 @admin_bp.route('/flagged-transactions', methods=['GET'])
 @jwt_required()
 def flagged_transactions():
@@ -36,7 +36,7 @@ def flagged_transactions():
 
     return jsonify(results), 200
 
-# 🏆 Top users by total balance across all currencies
+# Top users by total balance across all currencies
 @admin_bp.route('/top-users', methods=['GET'])
 @jwt_required()
 def top_users_by_balance():
@@ -59,7 +59,7 @@ def top_users_by_balance():
 
     return jsonify(top_users), 200
 
-# 💰 Total wallet balances by currency (system-wide)
+# Total wallet balances by currency (system-wide)
 @admin_bp.route('/total-balances', methods=['GET'])
 @jwt_required()
 def total_balances_by_currency():

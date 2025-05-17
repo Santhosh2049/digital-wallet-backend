@@ -11,5 +11,5 @@ class Transaction(Document):
     target_user = ReferenceField(User, required=False)
     timestamp = DateTimeField(default=datetime.utcnow)
     is_flagged = BooleanField(default=False)
-    review_status = StringField(default="pending")  # ✅ 'pending', 'cleared', 'rejected'
-    review_comment = StringField()  # ✅ optional admin note
+    review_status = StringField(default="pending")  #  'pending', 'cleared', 'rejected'
+    review_comment = StringField()  #  optional admin note

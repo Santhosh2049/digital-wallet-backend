@@ -65,7 +65,7 @@ def withdraw():
     wallet.balance -= amount
     wallet.save()
 
-    # ✅ Fraud Rule: Large withdrawal
+    # Fraud Rule: Large withdrawal
     is_flagged = amount >= 50000
 
     txn = Transaction(
@@ -102,7 +102,7 @@ def withdraw():
 @wallet_bp.route('/transfer', methods=['POST'])
 @jwt_required()
 def transfer():
-    from utils.fraud_check import check_fraud_transfer  # ✅ add this import at top
+    from utils.fraud_check import check_fraud_transfer  # add this import at top
 
     user_id = get_jwt_identity()
     data = request.get_json()
@@ -134,7 +134,7 @@ def transfer():
     sender_wallet.save()
     receiver_wallet.save()
 
-    # 🔍 Check fraud before saving transaction
+    # Check fraud before saving transaction
     txn = Transaction(user=sender, type="transfer", amount=amount, currency=currency, target_user=receiver)
 
     if check_fraud_transfer(sender, currency):

@@ -8,6 +8,6 @@ class Wallet(Document):
 
     meta = {
         'indexes': [
-            {'fields': ['user', 'currency'], 'unique': True}  # ✅ Unique by (user, currency)
+            {'fields': ['user', 'currency'], 'unique': True}  # Unique by (user, currency)
         ]
     }
