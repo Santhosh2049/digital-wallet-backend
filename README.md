@@ -9,3 +9,13 @@ A secure wallet system built with Python + Flask, supporting multi-currency acco
 - Fraud detection (flag large withdrawals & frequent transfers)
 - Admin dashboard APIs
 - Mock email alerts
+
+## Postman API Collection
+
+🧪 [Download API Collection](postman/digital_wallet_api.postman_collection.json)
+
+This Postman collection includes all routes:
+- Register, Login
+- Deposit, Withdraw, Transfer
+- Transaction History
+- Admin routes (flag review, top users, total balances)
